@@ -1,7 +1,7 @@
 //Дано масив з елементами різних типів. 
 //Створити функцію яка вираховує середнє арифметичне 
 //лише числових елементів даного масиву.
-/*let myArr = ["d", 4, "-", 3, 6, 9, 8];
+let myArr = ["d", 4, "-", 3, 6, 9, 8];
 
 function arefmeticMean(arr) {
     let sum = 0;
@@ -13,7 +13,7 @@ function arefmeticMean(arr) {
     console.log(sum / arr.length);
 }
 
-alert(arefmeticMean(myArr));
+arefmeticMean(myArr);
 
 //Написати функцію doMath(x, znak, y), яка отримує 3 аргументи: 
 //числа x і y, рядок znak. У змінній znak може бути: 
@@ -73,7 +73,7 @@ function arrAdd() {
     console.log(arr);
 }
 
-let functionResult = arrAdd(); */
+let functionResult = arrAdd(); 
 
 // Створити функцію, яка прибирає з рядка всі символи, 
 // які ми передали другим аргументом. 
