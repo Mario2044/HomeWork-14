@@ -1,19 +1,17 @@
 //Дано масив з елементами різних типів. 
 //Створити функцію яка вираховує середнє арифметичне 
 //лише числових елементів даного масиву.
-let myArr = ["d", 4, "-", 3, 6, 9, 8];
+/*
+let myArr = ["d", "f", 4, "-", 3, 6, 9, 8, "f", 8, 9, 1, 3];
+var numbers = myArr.filter(item => +item);
+console.log(numbers);
 
-function arefmeticMean(arr) {
-    let sum = 0;
-    for(let i = 0; i < arr.length; i++) {
-        if (typeof arr[i] !== "number") arr.splice(i, 1); {
-            sum += arr[i];
-        }
-    }
-    console.log(sum / arr.length);
+function arefmeticMean(nums) {
+    return nums.reduce((a, b) => (a + b)) / nums.length;
 }
 
-arefmeticMean(myArr);
+console.log(arefmeticMean(numbers));
+
 
 //Написати функцію doMath(x, znak, y), яка отримує 3 аргументи: 
 //числа x і y, рядок znak. У змінній znak може бути: 
@@ -74,30 +72,34 @@ function arrAdd() {
 }
 
 let functionResult = arrAdd(); 
+*/
 
 // Створити функцію, яка прибирає з рядка всі символи, 
 // які ми передали другим аргументом. 
 // 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". 
 // Вихідний рядок та символи для видалення задає користувач.
 
-let argumentOne = prompt('Напиши сюда например "Hello" или любое другое слово.')
-let argumentTwo = prompt('напиши еще одно любое слово.')
 
-function removeItemFromArray(arr, n) {
-    const newArray = [];
+let argument = prompt('Напиши сюда "Hello world" или любую другую фразу.');
 
-    for ( let i = 0; i < arr.length; i++) {
-        if(arr[i] !== n) {
-            newArray.push(arr[i]);
+alert(argument);
+
+let splitWord = prompt('Какие буквы вы хотите удалить?');
+
+function remove(text, symbols) {
+    const words = symbols.split(', ')
+    let newString = []
+    for(let letter = 0; letter < text.length; letter++) {
+        if(words.includes(text[letter])) {
+            continue;
+        } else {
+            newString.push(text[letter])
         }
     }
-    return newArray;
+    return newString.join('')
 }
-alert(`${argumentOne} ${argumentTwo}`);
 
-let splitWord = prompt('Какую букву ты бы хотел удалить?')
+let result = remove(argument, splitWord);
+console.log(result);
 
-const result = removeItemFromArray(argumentTwo, splitWord);
-
-alert(`${argumentOne} ${result}`);
 
