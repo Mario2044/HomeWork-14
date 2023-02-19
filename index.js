@@ -1,18 +1,18 @@
 //Дано масив з елементами різних типів. 
 //Створити функцію яка вираховує середнє арифметичне 
 //лише числових елементів даного масиву.
-/*
+
 let myArr = ["d", "f", 4, "-", 3, 6, 9, 8, "f", 8, 9, 1, 3];
-var numbers = myArr.filter(item => +item);
-console.log(numbers);
 
 function arefmeticMean(nums) {
-    return nums.reduce((a, b) => (a + b)) / nums.length;
+    const filterArr = nums.filter(el => typeof el === 'number' && !isNaN(el));
+    const sum = filterArr.reduce((acc, curr) => acc + curr, 0);
+    return filterArr.length > 0 ? sum / filterArr.length : 0;
 }
 
-console.log(arefmeticMean(numbers));
+console.log(arefmeticMean(myArr));
 
-
+/*
 //Написати функцію doMath(x, znak, y), яка отримує 3 аргументи: 
 //числа x і y, рядок znak. У змінній znak може бути: 
 //+, -, *, /, %, ^ (ступінь ).
@@ -72,7 +72,7 @@ function arrAdd() {
 }
 
 let functionResult = arrAdd(); 
-*/
+
 
 // Створити функцію, яка прибирає з рядка всі символи, 
 // які ми передали другим аргументом. 
@@ -89,12 +89,10 @@ let splitWord = prompt('Какие буквы вы хотите удалить?'
 function remove(text, symbols) {
     const words = symbols.split(', ')
     let newString = []
-    for(let letter = 0; letter < text.length; letter++) {
-        if(words.includes(text[letter])) {
+    for(let i = 0; i < text.length; i++) {
+        if(words.replaeAll(text[i], '')) {
             continue;
-        } else {
-            newString.push(text[letter])
-        }
+        } 
     }
     return newString.join('')
 }
@@ -102,4 +100,4 @@ function remove(text, symbols) {
 let result = remove(argument, splitWord);
 console.log(result);
 
-
+*/
